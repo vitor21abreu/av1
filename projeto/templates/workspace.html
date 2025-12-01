@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área de Trabalho</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    {{ if .CSS }}
+    <link rel="stylesheet" href="/static/css/{{ .CSS }}">
+    {{ end }}
+</head>
+
+<body>
+    <aside class="sidebar">
+        <h2 class="setor">{{ .User.Role }}</h2> 
+        <nav>
+            <ul>
+                <li><a href="/home">🏠 Home</a></li>
+                <li><a href="/chat">💬 Chat</a></li>
+                <li><a href="/workspace">📂 Área de Trabalho</a></li>
+                <li><a href="/usuario">👤 usuario</a></li>
+            </ul>
+        </nav>
+        <form method="POST" action="/logout" class="logout-form">
+        <button type="submit">
+            Sair
+        </button>
+    </form>
+    </aside>
+
+    <main class="conteudo">
+        <h1>Processos de Trabalho</h1>
+        <p>Aqui ficam os processos e tarefas da área {{ .User.Role }}.</p>
+        
+        <div class="processos-lista">
+            <h3>Tarefas Pendentes</h3>
+            <ul>
+                <li>Revisão do Relatório Mensal</li>
+                <li>Aprovação de Orçamentos</li>
+                <li>Treinamento de Novo Membro</li>
+            </ul>
+        </div>
+    </main>
+</body>
+</html>

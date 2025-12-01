@@ -1,0 +1,66 @@
+/* --- Estilos para a interface de Chat --- */
+
+.chat-box {
+    width: 100%; /* Ajuste para o tamanho do .conteudo */
+    max-width: 800px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.mensagens {
+    height: 350px;
+    overflow-y: auto;
+    border: 1px solid #cbd5e1;
+    padding: 15px;
+    border-radius: 8px;
+    background: #f8fafc;
+    margin-bottom: 15px;
+}
+
+.msg-usuario {
+    background: var(--cor-secundaria); /* Azul */
+    padding: 10px;
+    color: white;
+    border-radius: 8px;
+    margin: 8px 0 8px auto; /* Alinha o usuário à direita */
+    width: fit-content;
+    max-width: 80%;
+}
+
+.msg-outro {
+    background: #e2e8f0; /* Cinza claro */
+    padding: 10px;
+    color: var(--cor-primaria);
+    border-radius: 8px;
+    margin: 8px auto 8px 0; /* Alinha o outro usuário à esquerda */
+    width: fit-content;
+    max-width: 80%;
+}
+
+.input-area {
+    display: flex;
+    gap: 10px;
+}
+
+.input-area input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.input-area button {
+    padding: 10px 20px;
+    background-color: var(--cor-secundaria);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.input-area button:hover {
+    background-color: #0056b3;
+}

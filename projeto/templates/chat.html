@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }}</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="/static/css/chat.css">
+</head>
+
+<body>
+    <aside class="sidebar">
+        <h2 class="setor">{{ .User.Role }}</h2>
+        <nav>
+            <ul>
+                <li><a href="/home">🏠 Home</a></li>
+                <li><a href="/chat">💬 Chat</a></li>
+                <li><a href="/workspace">📂 Área de Trabalho</a></li>
+                <li><a href="/usuario">👤 Sobre</a></li>
+            </ul>
+        </nav>
+        <form method="POST" action="/logout" class="logout-form">
+        <button type="submit">
+            Sair
+        </button>
+    </form>
+    </aside>
+
+    <main class="conteudo">
+        <h1>Chat Empresarial</h1>
+        <div class="chat-box">
+            <div class="mensagens" id="msgs"></div>
+
+            <div class="input-area">
+                <input type="text" id="msg" placeholder="Digite sua mensagem...">
+                <button id="sendBtn">Enviar</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Variável global injetada para o chat.js ler
+        window.SETOR = "{{ .setor }}"; 
+    </script>
+    <script src="/static/js/chat.js"></script>
+</body>
+</html>
